@@ -15,6 +15,11 @@
 		DBCEABA01CF68C2900C9F2CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBCEAB9E1CF68C2900C9F2CE /* LaunchScreen.storyboard */; };
 		DBCEABAB1CF68C2A00C9F2CE /* app_webTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DBCEABAA1CF68C2A00C9F2CE /* app_webTests.m */; };
 		DBCEABB61CF68C2A00C9F2CE /* app_webUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DBCEABB51CF68C2A00C9F2CE /* app_webUITests.m */; };
+		DBCEABC91CF693E500C9F2CE /* RedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBCEABC81CF693E500C9F2CE /* RedViewController.m */; };
+		DBCEABCC1CF69F1100C9F2CE /* TabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = DBCEABCB1CF69F1100C9F2CE /* TabBar.m */; };
+		DBCEABCE1CF69F1F00C9F2CE /* TabBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBCEABCD1CF69F1F00C9F2CE /* TabBar.xib */; };
+		DBCEABD21CF6A12A00C9F2CE /* NewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBCEABD01CF6A12A00C9F2CE /* NewViewController.m */; };
+		DBCEABD31CF6A12A00C9F2CE /* NewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBCEABD11CF6A12A00C9F2CE /* NewViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +56,14 @@
 		DBCEABB11CF68C2A00C9F2CE /* app_webUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = app_webUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBCEABB51CF68C2A00C9F2CE /* app_webUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = app_webUITests.m; sourceTree = "<group>"; };
 		DBCEABB71CF68C2A00C9F2CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DBCEABC71CF693E500C9F2CE /* RedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedViewController.h; sourceTree = "<group>"; };
+		DBCEABC81CF693E500C9F2CE /* RedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedViewController.m; sourceTree = "<group>"; };
+		DBCEABCA1CF69F1100C9F2CE /* TabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBar.h; sourceTree = "<group>"; };
+		DBCEABCB1CF69F1100C9F2CE /* TabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBar.m; sourceTree = "<group>"; };
+		DBCEABCD1CF69F1F00C9F2CE /* TabBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabBar.xib; sourceTree = "<group>"; };
+		DBCEABCF1CF6A12A00C9F2CE /* NewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewViewController.h; sourceTree = "<group>"; };
+		DBCEABD01CF6A12A00C9F2CE /* NewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewViewController.m; sourceTree = "<group>"; };
+		DBCEABD11CF6A12A00C9F2CE /* NewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +152,13 @@
 		DBCEABC31CF68C6300C9F2CE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				DBCEAB961CF68C2900C9F2CE /* ViewController.h */,
+				DBCEAB971CF68C2900C9F2CE /* ViewController.m */,
+				DBCEABC71CF693E500C9F2CE /* RedViewController.h */,
+				DBCEABC81CF693E500C9F2CE /* RedViewController.m */,
+				DBCEABCF1CF6A12A00C9F2CE /* NewViewController.h */,
+				DBCEABD01CF6A12A00C9F2CE /* NewViewController.m */,
+				DBCEABD11CF6A12A00C9F2CE /* NewViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -166,8 +186,9 @@
 		DBCEABC61CF68C6300C9F2CE /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				DBCEAB961CF68C2900C9F2CE /* ViewController.h */,
-				DBCEAB971CF68C2900C9F2CE /* ViewController.m */,
+				DBCEABCA1CF69F1100C9F2CE /* TabBar.h */,
+				DBCEABCB1CF69F1100C9F2CE /* TabBar.m */,
+				DBCEABCD1CF69F1F00C9F2CE /* TabBar.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -276,8 +297,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DBCEABA01CF68C2900C9F2CE /* LaunchScreen.storyboard in Resources */,
+				DBCEABD31CF6A12A00C9F2CE /* NewViewController.xib in Resources */,
 				DBCEAB9D1CF68C2900C9F2CE /* Assets.xcassets in Resources */,
 				DBCEAB9B1CF68C2900C9F2CE /* Main.storyboard in Resources */,
+				DBCEABCE1CF69F1F00C9F2CE /* TabBar.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,7 +325,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBCEABCC1CF69F1100C9F2CE /* TabBar.m in Sources */,
+				DBCEABC91CF693E500C9F2CE /* RedViewController.m in Sources */,
 				DBCEAB981CF68C2900C9F2CE /* ViewController.m in Sources */,
+				DBCEABD21CF6A12A00C9F2CE /* NewViewController.m in Sources */,
 				DBCEAB951CF68C2900C9F2CE /* AppDelegate.m in Sources */,
 				DBCEAB921CF68C2900C9F2CE /* main.m in Sources */,
 			);

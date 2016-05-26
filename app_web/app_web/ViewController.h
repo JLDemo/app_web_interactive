@@ -11,5 +11,9 @@
 @interface ViewController : UIViewController
 
 
+- (void)backClicked ;
+- (void)goForward ;
+- (void)shop;
+- (void)selfCenter;
 @end
 

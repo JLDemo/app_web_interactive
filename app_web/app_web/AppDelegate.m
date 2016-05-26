@@ -7,18 +7,51 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
+#import "RedViewController.h"
 
 @interface AppDelegate ()
-
+@property (strong, nonatomic) UIWindow *normalWindow;
 @end
 
 @implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    ViewController *vc = [[ViewController alloc] init];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.rootViewController = vc;
+    [self.window makeKeyAndVisible];
+    /*
+    CGRect rect = [[UIScreen mainScreen] bounds];
+    rect.origin.x = 100;
+    rect.origin.y = 100;
+    self.normalWindow = [[UIWindow alloc] initWithFrame:rect];
+    self.normalWindow.rootViewController = [[RedViewController alloc] init];
+    self.normalWindow.backgroundColor = [UIColor redColor];
+    self.normalWindow.windowLevel = UIWindowLevelNormal;
+    [self.normalWindow makeKeyAndVisible];
+    */
+    
+    
     return YES;
 }
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    if (url) {
+        // 模拟器 Safari输入链接：kongfz：//  即可打开应用
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"web" message:url.absoluteString delegate:self cancelButtonTitle:@"cancel" otherButtonTitles:@"OK", nil];
+        [alert show];
+    }
+    return YES;
+}
+
+//- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *,id> *)options {
+//    
+//    return YES;
+//}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

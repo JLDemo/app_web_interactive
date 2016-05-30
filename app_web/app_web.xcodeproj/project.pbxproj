@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB6EDD801CFC432300B66DF7 /* CookieTool.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6EDD7F1CFC432300B66DF7 /* CookieTool.m */; };
 		DBCEAB921CF68C2900C9F2CE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DBCEAB911CF68C2900C9F2CE /* main.m */; };
 		DBCEAB951CF68C2900C9F2CE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DBCEAB941CF68C2900C9F2CE /* AppDelegate.m */; };
 		DBCEAB981CF68C2900C9F2CE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBCEAB971CF68C2900C9F2CE /* ViewController.m */; };
@@ -41,6 +42,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DB6EDD7E1CFC432300B66DF7 /* CookieTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CookieTool.h; sourceTree = "<group>"; };
+		DB6EDD7F1CFC432300B66DF7 /* CookieTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CookieTool.m; sourceTree = "<group>"; };
+		DB6EDD811CFC434300B66DF7 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		DBCEAB8D1CF68C2900C9F2CE /* app_web.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = app_web.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBCEAB911CF68C2900C9F2CE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DBCEAB931CF68C2900C9F2CE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../AppDelegate.h; sourceTree = "<group>"; };
@@ -93,6 +97,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DB6EDD7D1CFC431200B66DF7 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				DB6EDD7E1CFC432300B66DF7 /* CookieTool.h */,
+				DB6EDD7F1CFC432300B66DF7 /* CookieTool.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
 		DBCEAB841CF68C2900C9F2CE = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +129,7 @@
 		DBCEAB8F1CF68C2900C9F2CE /* app_web */ = {
 			isa = PBXGroup;
 			children = (
+				DB6EDD7D1CFC431200B66DF7 /* Tools */,
 				DBCEABC61CF68C6300C9F2CE /* Views */,
 				DBCEABC31CF68C6300C9F2CE /* Controllers */,
 				DBCEABC41CF68C6300C9F2CE /* Models */,
@@ -182,6 +196,7 @@
 				DBCEAB9E1CF68C2900C9F2CE /* LaunchScreen.storyboard */,
 				DBCEABA11CF68C2900C9F2CE /* Info.plist */,
 				DBCEABD41CF6B30900C9F2CE /* tt.html */,
+				DB6EDD811CFC434300B66DF7 /* PrefixHeader.pch */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -330,6 +345,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DBCEABCC1CF69F1100C9F2CE /* TabBar.m in Sources */,
+				DB6EDD801CFC432300B66DF7 /* CookieTool.m in Sources */,
 				DBCEABC91CF693E500C9F2CE /* RedViewController.m in Sources */,
 				DBCEAB981CF68C2900C9F2CE /* ViewController.m in Sources */,
 				DBCEABD21CF6A12A00C9F2CE /* NewViewController.m in Sources */,
@@ -477,6 +493,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/app_web/Others/PrefixHeader.pch";
 				INFOPLIST_FILE = app_web/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kongfz.www.app-web";
@@ -488,6 +505,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/app_web/Others/PrefixHeader.pch";
 				INFOPLIST_FILE = app_web/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kongfz.www.app-web";

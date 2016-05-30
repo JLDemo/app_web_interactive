@@ -1,0 +1,23 @@
+//
+//  PrefixHeader.pch
+//  app_web
+//
+//  Created by kfz on 16/5/30.
+//  Copyright © 2016年 kongfz. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+
+#define TABBAR_Height 40
+#define URLString @"http://m.kongfz.com"  // https://neibumlogin.kongfz.com
+#define CENTER @"http://muser.kongfz.com/mobile/index.html"
+#define SHOP @"http://mshop.kongfz.com/mobile/shopcart/cart.html"
+#define MSG @"http://mmessage.kongfz.com/"
+#define LOGIN @"http://muser.kongfz.com/index.php"
+#define SESSION_LOGIN @"login_session"
+
+
+
+#endif /* PrefixHeader_pch */

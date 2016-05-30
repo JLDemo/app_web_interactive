@@ -10,9 +10,10 @@
 #import "TabBar.h"
 
 #define TABBAR_Height 40
-#define URLString @"https://neibumlogin.kongfz.com"
-#define CENTER @"http://neibumuser.kongfz.com/mobile/index.html"
-#define SHOP @"http://neibumshop.kongfz.com"
+#define URLString @"http://m.kongfz.com"  // https://neibumlogin.kongfz.com
+#define CENTER @"http://muser.kongfz.com/mobile/index.html"
+#define SHOP @"http://mshop.kongfz.com/mobile/shopcart/cart.html"
+#define MSG @"http://mmessage.kongfz.com/"
 
 
 @interface ViewController ()<UIWebViewDelegate>
@@ -51,13 +52,67 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.webView.delegate = self;
     
+    
+    NSArray *cookies =[[NSUserDefaults standardUserDefaults]  objectForKey:@"abcdef"];
+    
+    NSMutableDictionary *cookieProperties = [NSMutableDictionary dictionary];
+    if ([cookies count]) {
+        [cookieProperties setObject:[cookies objectAtIndex:0] forKey:NSHTTPCookieName];
+        [cookieProperties setObject:[cookies objectAtIndex:1] forKey:NSHTTPCookieValue];
+        [cookieProperties setObject:[cookies objectAtIndex:3] forKey:NSHTTPCookieDomain];
+        [cookieProperties setObject:[cookies objectAtIndex:4] forKey:NSHTTPCookiePath];
+    }
+    
+    NSHTTPCookie *cookieuser = [NSHTTPCookie cookieWithProperties:cookieProperties];
+    [[NSHTTPCookieStorage sharedHTTPCookieStorage]  setCookie:cookieuser];
+    
+    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://muser.kongfz.com/index.php"]];
+    [_webView loadRequest:request];  //loadRequest会自动带上设置的cookies！
+    
+    [self.view addSubview:_webView];
+    
     [self loadRequest:URLString];
 }
 
+- (void)showCookie {
+    NSHTTPCookieStorage *myCookie = [NSHTTPCookieStorage sharedHTTPCookieStorage];
+    NSArray *cookiesURL = [myCookie cookiesForURL:[NSURL URLWithString:@"http://muser.kongfz.com/index.php"]];
+    NSLog(@"%@\n\n",cookiesURL);
+}
+
+-(void)saveSessID{
+    NSHTTPCookie *cookie;
+    NSHTTPCookieStorage *nCookies = [NSHTTPCookieStorage sharedHTTPCookieStorage];
+    NSArray *cookiesURL = [nCookies cookiesForURL:[NSURL URLWithString:@"http://muser.kongfz.com/index.php"]];
+    
+    for (id c in cookiesURL)
+    {
+        if ([c isKindOfClass:[NSHTTPCookie class]])
+        {
+            cookie=(NSHTTPCookie *)c;
+            if ([cookie.name isEqualToString:@"PHPSESSID"]) {
+                
+                NSNumber *sessionOnly = [NSNumber numberWithBool:cookie.sessionOnly];
+                NSNumber *isSecure = [NSNumber numberWithBool:cookie.isSecure];
+                NSArray *cookies = [NSArray arrayWithObjects:cookie.name, cookie.value, sessionOnly, cookie.domain, cookie.path, isSecure, nil];
+                [[NSUserDefaults standardUserDefaults] setObject:cookies forKey:@"abcdef"];
+                break;
+            }
+        }
+    }
+}
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
     NSString *urlString = request.URL.absoluteString;
     NSLog(@"%@\n\n\n",urlString);
+    
+//
+    NSRange range = [request.URL.absoluteString rangeOfString:@"http://muser.kongfz.com/index.php"];
+    if (range.location != NSNotFound) {
+//        [self showCookie];
+        [self saveSessID];
+//        return NO;
+    }
     
     return YES;
 }

@@ -20,6 +20,7 @@
 		DBCEABCE1CF69F1F00C9F2CE /* TabBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBCEABCD1CF69F1F00C9F2CE /* TabBar.xib */; };
 		DBCEABD21CF6A12A00C9F2CE /* NewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBCEABD01CF6A12A00C9F2CE /* NewViewController.m */; };
 		DBCEABD31CF6A12A00C9F2CE /* NewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBCEABD11CF6A12A00C9F2CE /* NewViewController.xib */; };
+		DBCEABD51CF6B30900C9F2CE /* tt.html in Resources */ = {isa = PBXBuildFile; fileRef = DBCEABD41CF6B30900C9F2CE /* tt.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		DBCEABCF1CF6A12A00C9F2CE /* NewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewViewController.h; sourceTree = "<group>"; };
 		DBCEABD01CF6A12A00C9F2CE /* NewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewViewController.m; sourceTree = "<group>"; };
 		DBCEABD11CF6A12A00C9F2CE /* NewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewViewController.xib; sourceTree = "<group>"; };
+		DBCEABD41CF6B30900C9F2CE /* tt.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = tt.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +181,7 @@
 				DBCEAB9C1CF68C2900C9F2CE /* Assets.xcassets */,
 				DBCEAB9E1CF68C2900C9F2CE /* LaunchScreen.storyboard */,
 				DBCEABA11CF68C2900C9F2CE /* Info.plist */,
+				DBCEABD41CF6B30900C9F2CE /* tt.html */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBCEABD51CF6B30900C9F2CE /* tt.html in Resources */,
 				DBCEABA01CF68C2900C9F2CE /* LaunchScreen.storyboard in Resources */,
 				DBCEABD31CF6A12A00C9F2CE /* NewViewController.xib in Resources */,
 				DBCEAB9D1CF68C2900C9F2CE /* Assets.xcassets in Resources */,

@@ -9,6 +9,10 @@
 #import <Foundation/Foundation.h>
 
 @interface CookieTool : NSObject
-+ (void)getCookie ;
-+ (void)saveCookie ;
+
++ (void)getAllCookie ;
++ (void)saveAllCookie ;
+
+//+ (void)getCookie ;
+//+ (void)saveCookie ;
 @end

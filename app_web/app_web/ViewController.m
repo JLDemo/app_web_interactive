@@ -39,8 +39,17 @@
     return _tabBar;
 }
 
+- (void)getCookie {
+    NSHTTPCookieStorage *storage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
+    NSArray <NSHTTPCookie *>*cookies = [storage cookies];
+    for (NSHTTPCookie *cookie in cookies) {
+        NSLog(@"%@",cookie);
+    }
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self getCookie];
     
     self.tabBar.delegate = self;
     self.view.backgroundColor = [UIColor whiteColor];
@@ -59,13 +68,17 @@
 }
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
-    NSString *urlString = request.URL.absoluteString;
-    NSLog(@"%@\n\n\n",urlString);
+//    NSString *urlString = request.URL.absoluteString;
     
+    [CookieTool saveAllCookie];
+//    NSArray <NSHTTPCookie *>*cookies = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookies];
+//    NSLog(@"%@",cookies);
+    /*
     NSRange range = [request.URL.absoluteString rangeOfString:LOGIN];
     if (range.location != NSNotFound) {
         [CookieTool saveCookie];
     }
+     */
     
     return YES;
 }

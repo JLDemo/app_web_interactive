@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
 #import "RedViewController.h"
+#import "CookieTool.h"
 
 @interface AppDelegate ()
 @property (strong, nonatomic) UIWindow *normalWindow;
@@ -34,16 +35,7 @@
     self.normalWindow.windowLevel = UIWindowLevelNormal;
     [self.normalWindow makeKeyAndVisible];
     */
-    //存储Cookie,示例加载的URL:http://119.29.69.58:81/index
-    NSURL * cookieHost = [NSURL URLWithString:@"http://muser.kongfz.com/index.php"];
-    NSHTTPCookie * cookie = [NSHTTPCookie cookieWithProperties:
-                             [NSDictionary    dictionaryWithObjectsAndKeys:
-                              [cookieHost host],NSHTTPCookieDomain,
-                              [cookieHost path],NSHTTPCookiePath,
-                              @"COOKIE_NAME",NSHTTPCookieName,
-                              @"COOKIE_VALUE",NSHTTPCookieValue,nil]];
-    
-    [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookie:cookie];
+    [CookieTool getAllCookie];
 
     
     
@@ -79,7 +71,7 @@
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookieAcceptPolicy:NSHTTPCookieAcceptPolicyAlways];
+//    [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookieAcceptPolicy:NSHTTPCookieAcceptPolicyAlways];
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 }
 

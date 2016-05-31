@@ -10,6 +10,37 @@
 
 @implementation CookieTool
 
++ (void)getAllCookie {
+    NSArray *cookieNameArray = [[NSUserDefaults standardUserDefaults] objectForKey:COOKIE_ARRAY];
+    for (NSString *cookieName in cookieNameArray) {
+        NSDictionary *dic = [[NSUserDefaults standardUserDefaults] objectForKey:cookieName];
+        NSHTTPCookie *cookie = [NSHTTPCookie cookieWithProperties:dic];
+        [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookie:cookie];
+    }
+}
++ (void)saveAllCookie {
+    NSMutableArray *cookieArray = [NSMutableArray array];
+    NSArray <NSHTTPCookie *>*cookies = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookies];
+    for (NSHTTPCookie *cookie in cookies ) {
+        [cookieArray addObject:cookie.name];
+        NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+        // name value domain path version expiredDate
+        [dic setObject:cookie.name forKey:NSHTTPCookieName];
+        [dic setObject:cookie.value forKey:NSHTTPCookieValue];
+        [dic setObject:cookie.domain forKey:NSHTTPCookieDomain];
+        [dic setObject:cookie.path forKey:NSHTTPCookiePath];
+        [dic setObject:@(cookie.version) forKey:NSHTTPCookieVersion];
+        NSDate *expireDate = [NSDate dateWithTimeIntervalSinceNow:3600 * 24 * COOKIE_EXPIRE_DAY];
+        [dic setObject:expireDate forKey:NSHTTPCookieExpires];
+        
+        [[NSUserDefaults standardUserDefaults] setValue:dic forKey:cookie.name];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+    [[NSUserDefaults standardUserDefaults] setValue:cookieArray forKey:COOKIE_ARRAY];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+/*
 + (void)getCookie {
     NSArray *cookies =[[NSUserDefaults standardUserDefaults]  objectForKey:SESSION_LOGIN];
     
@@ -46,5 +77,24 @@
         }
     }
 }
+*/
 
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

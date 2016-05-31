@@ -9,6 +9,8 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 
+#define COOKIE_ARRAY @"cookie_array"
+#define COOKIE_EXPIRE_DAY 30 // cookie的有效期30天
 
 #define TABBAR_Height 40
 #define URLString @"http://m.kongfz.com"  // https://neibumlogin.kongfz.com

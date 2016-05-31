@@ -10,6 +10,19 @@
 
 @implementation CookieTool
 
++ (void)initialize {
+    if (self == [CookieTool self]) {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(cookieChanged) name:NSHTTPCookieManagerCookiesChangedNotification object:nil];
+    }
+}
++ (void)cookieChanged {
+    [self updateAllCookie];
+//    NSLog(@"\n\n%s",__func__);
+//    NSArray *cookieNameArray = [[NSUserDefaults standardUserDefaults] objectForKey:COOKIE_ARRAY];
+//    NSLog(@"%@",cookieNameArray);\
+    
+}
+
 + (void)getAllCookie {
     NSArray *cookieNameArray = [[NSUserDefaults standardUserDefaults] objectForKey:COOKIE_ARRAY];
     for (NSString *cookieName in cookieNameArray) {
@@ -18,7 +31,11 @@
         [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookie:cookie];
     }
 }
-+ (void)saveAllCookie {
+
++ (void)updateAllCookie {
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:COOKIE_ARRAY];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
     NSMutableArray *cookieArray = [NSMutableArray array];
     NSArray <NSHTTPCookie *>*cookies = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookies];
     for (NSHTTPCookie *cookie in cookies ) {

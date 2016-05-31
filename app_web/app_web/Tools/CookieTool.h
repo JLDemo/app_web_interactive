@@ -10,8 +10,10 @@
 
 @interface CookieTool : NSObject
 
+
+
 + (void)getAllCookie ;
-+ (void)saveAllCookie ;
++ (void)updateAllCookie ;
 
 //+ (void)getCookie ;
 //+ (void)saveCookie ;

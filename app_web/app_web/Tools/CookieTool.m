@@ -40,6 +40,8 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
+
+
 /*
 + (void)getCookie {
     NSArray *cookies =[[NSUserDefaults standardUserDefaults]  objectForKey:SESSION_LOGIN];
@@ -80,6 +82,7 @@
 */
 
 @end
+
 
 
 

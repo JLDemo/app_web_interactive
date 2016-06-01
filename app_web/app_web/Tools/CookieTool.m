@@ -46,7 +46,7 @@
 }
 
 + (void)updateAllCookie {
-    [self logOut];
+//    [self logOut];
     
     NSMutableArray *cookieArray = [NSMutableArray array];
     NSArray <NSHTTPCookie *>*cookies = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookies];

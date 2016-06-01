@@ -61,16 +61,20 @@
     NSString *urlString = request.URL.absoluteString;
     NSLog(@"%@\n\n",urlString);
     
-    if ( [urlString hasPrefix:LOGIN_OUT] ) {
-        [CookieTool logOut];
-    }
+//    if ( [urlString hasPrefix:LOGIN_OUT] ) {
+//        [CookieTool logOut];
+//    }
     
     
     return YES;
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
-//    NSLog(@"%s",__func__);
+    NSString *str1 = @"var footer = document.getElementsByClassName(\"footer\")[0];";
+    NSString *str2 = @"footer.parentNode.removeChild(footer);";
+//    NSString *str2 = @"alert(22);";
+    [webView stringByEvaluatingJavaScriptFromString:str1];
+    [webView stringByEvaluatingJavaScriptFromString:str2];
 }
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(nullable NSError *)error {
 //    NSLog(@"%s",__func__);

@@ -19,6 +19,7 @@
 #define MSG @"http://mmessage.kongfz.com/"
 #define LOGIN @"http://muser.kongfz.com/index.php"
 #define SESSION_LOGIN @"login_session"
+#define LOGIN_OUT @"http://muser.kongfz.com/logout/"
 
 
 

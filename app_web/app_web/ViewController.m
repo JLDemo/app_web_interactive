@@ -61,8 +61,10 @@
     NSString *urlString = request.URL.absoluteString;
     NSLog(@"%@\n\n",urlString);
     
-//    [CookieTool saveAllCookie];
-
+    if ( [urlString hasPrefix:LOGIN_OUT] ) {
+        [CookieTool logOut];
+    }
+    
     
     return YES;
 }

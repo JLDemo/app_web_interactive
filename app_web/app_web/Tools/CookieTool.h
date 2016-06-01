@@ -14,6 +14,7 @@
 
 + (void)getAllCookie ;
 + (void)updateAllCookie ;
++ (void)logOut ;
 
 //+ (void)getCookie ;
 //+ (void)saveCookie ;

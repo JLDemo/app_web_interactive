@@ -32,9 +32,21 @@
     }
 }
 
-+ (void)updateAllCookie {
+/**
+ * 清除所有缓存的cookie
+ */
++ (void)logOut {
+    NSArray *cookieNameArray = [[NSUserDefaults standardUserDefaults] objectForKey:COOKIE_ARRAY];
+    for (NSString *name in cookieNameArray) {
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:name];
+    }
+    
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:COOKIE_ARRAY];
     [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
++ (void)updateAllCookie {
+    [self logOut];
     
     NSMutableArray *cookieArray = [NSMutableArray array];
     NSArray <NSHTTPCookie *>*cookies = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookies];

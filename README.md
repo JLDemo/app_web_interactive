@@ -1,9 +1,9 @@
 # app_web_interactive
 手机app和网页界面交互，测试。
 
-
+利用cookie实现自动登录
 利用UIWebView，加载孔夫子旧书网m站，
 
-    利用cookie实现自动登录
+   
 
     1）自动登录
